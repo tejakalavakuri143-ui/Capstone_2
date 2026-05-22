@@ -1,0 +1,27 @@
+python - <<'PY'
+import sqlite3
+from pathlib import Path
+
+base = Path.cwd()
+db_path = base / "database" / "invoices.db"
+report_dir = base / "outputs" / "reports"
+
+conn = sqlite3.connect(db_path)
+cur = conn.cursor()
+
+for table in ("invoice_reports", "processed_files", "human_reviews"):
+    cur.execute(f"DELETE FROM {table}")
+
+conn.commit()
+conn.close()
+
+if report_dir.exists():
+    for path in report_dir.iterdir():
+        if path.is_file() and path.suffix.lower() in {".json", ".html"}:
+            path.unlink()
+
+print("DB and generated UI/report data cleared.")
+PY
+
+
+ INVOICE_UI_BACKEND=mcp streamlit run ui/streamlit_app.py

@@ -1,0 +1,227 @@
+Capstone Project: AI Invoice Auditor 
+
+Project Overview 
+
+Project Name: AI Invoice Auditor 
+
+Project Description: 
+
+An end-to-end Agentic AI-powered system for automated multilingual invoice processing and validation. The solution uses AI Agents to extract, translate, validate, and audit invoices received via email in various formats and languages. It integrates Retrieval-Augmented Generation (RAG) and human-in-the-loop feedback for enhanced accuracy and reliability. 
+
+Business Context: 
+A Logistic client receives invoices from global vendors to raise invoice discrepancies in various languages (English, Spanish, German, etc.) and formats (PDF, Word, scanned images) via email as an attachment. Manual processing is time consuming, error-prone, and a skillful process as it requires language expertise. 
+
+Project Requirements: 
+
+Design and implement an end-to-end Agentic AI-powered solution that: 
+
+Monitors an email inbox for incoming invoices. (for this step only design/approach is expected and not the actual implementation) 
+ 
+
+Extracts invoice data (text, tables, key fields) from attachments which can be in any language and format (so the solution should be format and language agnostic) 
+ 
+
+Translates extracted data to English. 
+ 
+
+Validates invoice data against records in an enterprise system (e.g., ERP, database, or mock data) – The call to the enterprise system can be mocked for capstone implementation. The mock API call should return the data from ERP system to be validated against the data received at line item level in customer invoice. 
+ 
+
+Generates a detailed validation report highlighting discrepancies (if there is data mismatch between the data in invoice vs data from ERP system), missing fields from invoice (invoice validation should be performed against the dynamic rules configured), and translation confidence.  
+ 
+
+Provide question answering capabilities (implemented using vector-based RAG) on the invoices to the support agent (Human Agent). 
+
+RAG should be implemented using agentic AI. RAG solution should comprise of the following agent roles: 
+
+Indexing Agent – Parses and indexes invoice documents in a vector DB 
+
+Retrieval Agent – Accepts user query, generates query embedding, and performs similarity search 
+
+Augmentation Agent – Performs reranking of chunks based on similarity score 
+
+Generation Agent – Uses LLM to generate contextual responses 
+
+Reflection Agent – Evaluates response based on RAG Triad parameters including Answer Relevance, Context Relevance, and Groundedness 
+ 
+
+As part of the RAG Implementation the following tools need to be leverages 
+ 
+
+Vector-Indexer Tool – Converts documents into embeddings and stores them in a vector database for efficient retrieval. 
+
+Semantic-Retriever Tool – Performs semantic search using vector similarity to find contextually relevant data. 
+
+Chunk-Ranker Tool – Re-ranks retrieved chunks based on relevance scores to improve context quality. 
+
+Response-Synthesizer Tool – Generates natural language answers using retrieved context and user queries. 
+
+RAG-Evaluator Tool – Assesses generated responses using RAG metrics like Context ,relevance and groundedness. 
+
+ 
+
+Implements an agentic workflow using open-source LangGraph framework, with RAG, prompt engineering, and human-in-the-loop feedback. 
+ 
+
+The overall Invoice Auditor solution should be implemented using agentic AI, and should include the following agent roles: 
+ 
+
+Invoice-Monitor Agent – Continuously monitors the mailbox for emails with invoice attachments (this agent can read the documents from file system rather than from live mailbox) 
+
+Extractor Agent – Extracts data from various document formats 
+
+Translation Agent – Translates extracted invoice data from different languages into English 
+
+Invoice Data Validation Agent – Validates missing information based on defined rules 
+
+Business Validation Agent – Validates extracted invoice data with enterprise system data to identify discrepancies 
+
+Reporting Agent – Generates detailed reports highlighting discrepancies, missing fields, translation confidence, and final recommendation 
+ 
+
+The above-mentioned agents should have the appropriate tools to accomplish the assigned task. 
+ 
+
+Invoice-Watcher Tool – Monitors a designated mailbox or file system to detect and retrieve emails containing invoice attachments. (this agent can read the documents from file system rather than from live mailbox) 
+
+Data Harvester Tool – Extracts data from a wide range of document formats, enabling downstream processing. 
+
+Lang-Bridge Tool – Converts extracted invoice content from various languages into English for standardized interpretation. 
+
+DataCompletenessChecker Tool – Validates invoice data for completeness and accuracy based on predefined business rules. 
+
+Business Validation Tool – Cross-verifies extracted invoice data against enterprise systems to identify mismatches or inconsistencies. 
+
+Insight Reporter Tool – Generates comprehensive reports highlighting data gaps, validation results, translation confidence, and final recommendations. 
+ 
+
+Out of the agents defined above, some should be developed using LangGraph, while others should be implemented using Google ADK. 
+
+ 
+
+The solution should enable seamless communication between agents implemented by different frameworks by adhering to the Agent-to-Agent Protocol, ensuring standardized and secure interactions across components. 
+
+ 
+
+Implements RAI (Responsible AI) guardrails across agents and tools wherever applicable, ensuring ethical, secure, and compliant use of AI components throughout the solution 
+ 
+
+The solution should integrate observability tools such as LangFuse to enable real-time tracing, monitoring, and debugging of the agentic AI workflows, ensuring transparency and operational reliability throughout the system. 
+
+Solution Architecture 
+
+The Agentic AI Invoice Auditor is built on a modular agentic architecture using open source LangGraph Agentic framework. It orchestrates specialized agents for tasks like monitoring, extraction, translation, validation, and reporting through a centralized LLM Gateway (Lite LLM). A RAG-based question answering system enables contextual queries with agents for indexing, retrieval, augmentation, generation, and reflection. The system includes human-in-the-loop feedback, and audit trails for reliability and transparency.  
+
+Solution should leverage prompt templates while defining prompts. 
+
+The solution should utilize the Model Context Protocol to dynamically discover, access, and invoke the appropriate tools required for task execution. 
+
+The solution should integrate RAI (Responsible AI) guardrails within agents and tools to enforce responsible behavior, enhance trustworthiness, and align with ethical AI practices wherever necessary. 
+
+The solution should implement agents using two distinct agentic frameworks LangGraph and Google ADK while ensuring agent discovery, invocation, and communication are aligned with the guidelines to the Agent-to-Agent Protocol. 
+
+The solution should embed observability features using tools like LangFuse to enable deep visibility into agentic workflows facilitating trace analysis, performance tracking, and intelligent debugging for improved system resilience and operational clarity. 
+
+Technology Stack 
+
+Backend: 
+
+Python and required Libraries  
+
+LangGraph Agentic framework 
+
+Google ADK framework 
+
+Vector DB (FAISS, Qdrant, Weaviate) 
+
+OCR tools (e.g., Tesseract) 
+
+ 
+
+Models (Open source): 
+
+Text Generation models 
+
+Embedding model 
+
+Multi-modal model 
+
+Communication Protocol: 
+
+Model Context Protocol (MCP): Facilitates the interaction between an agent and the specific tools it needs to use 
+
+Agent-to-Agent Protocol (A2A): Defines the standards and mechanisms for seamless discovery, invocation, and communication between agents, enabling coordinated task execution and interoperability within an agentic ecosystem. 
+
+Co-pilot: 
+
+Github Copilot for Agentic AI code generation 
+
+ 
+
+LLM Gateway: 
+
+Lite LLM 
+
+ 
+
+Frontend: 
+
+Streamlit / React for the UI 
+
+ 
+
+Deployment: 
+
+NuvePro Lab 
+
+ 
+
+Observability Tool: 
+
+LangFuse 
+
+ 
+
+ 
+
+Non-Functional Requirements 
+
+ 
+
+Performance: Efficient processing of large invoice batches 
+
+Scalability: Modular agent design allows horizontal scaling 
+
+Security: Secure email access and document handling 
+
+Reliability: Robust error handling and fallback mechanisms 
+
+Usability: Intuitive UI for support agents 
+
+Maintainability: Modular codebase with documentation 
+
+ 
+
+ 
+
+ 
+
+Input Data set 
+
+ 
+
+Final Deliverables 
+
+Solution Design Diagram 
+
+Source Code (Python, modularized) 
+
+Functional Application (demo UI + backend agents) 
+
+Sample Data (multilingual invoices, mock enterprise records) 
+
+Validation Reports (PDF/HTML/CSV) 
+
+Documentation (setup, usage, agent design, prompt templates) 
+
+ 
