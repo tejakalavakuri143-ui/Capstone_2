@@ -1,0 +1,44 @@
+{
+    "report_metadata": {
+        "invoice_id": "INV-1001",
+        "generated_at": "2026-05-18T06:33:08.900558Z"
+    },
+    "invoice_summary": {
+        "vendor_id": "VEND-001",
+        "currency": "USD",
+        "translation_confidence": 1.0
+    },
+    "validation_result": {
+        "status": "REVIEW_REQUIRED",
+        "summary": "Invoice requires manual review. Discrepancies found: Price mismatch for Industrial Gloves (Invoice=3.5, PO=3.0) Recommendation: Manual Review",
+        "missing_fields": [],
+        "warnings": [],
+        "discrepancy_summary": [
+            "Price mismatch for Industrial Gloves (Invoice=3.5, PO=3.0)"
+        ]
+    },
+    "line_items": [
+        {
+            "item_code": "SKU-001",
+            "description": "Pallet Wrapping Film",
+            "qty": 50.0,
+            "unit_price": 12.0,
+            "total": 600.0
+        },
+        {
+            "item_code": "SKU-002",
+            "description": "Industrial Gloves",
+            "qty": 120.0,
+            "unit_price": 3.5,
+            "total": 420.0
+        },
+        {
+            "item_code": "SKU-003",
+            "description": "Safety Helmets",
+            "qty": 30.0,
+            "unit_price": 15.0,
+            "total": 450.0
+        }
+    ],
+    "recommendation": "Manual Review"
+}

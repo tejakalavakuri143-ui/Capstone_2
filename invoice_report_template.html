@@ -1,0 +1,138 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Report - {invoice_id}</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+  body{background:#f0f2f5;padding:30px;color:#333}
+  .card{background:#fff;border-radius:10px;padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  h1{color:#2c3e50;font-size:1.4em;margin-bottom:4px}
+  h2{font-size:.95em;color:#555;border-left:4px solid #2c3e50;padding-left:8px;margin:14px 0 8px}
+  table{width:100%;border-collapse:collapse;font-size:.9em}
+  td,th{padding:8px 12px;border:1px solid #e0e0e0;text-align:left}
+  th{background:#2c3e50;color:#fff;width:40%}
+  tr:nth-child(even){background:#f9f9f9}
+  ul{padding-left:18px;margin:4px 0}
+  li{margin:4px 0;font-size:.9em}
+  .badge{display:inline-block;padding:7px 22px;border-radius:20px;color:#fff;font-weight:bold;background:badge_color}
+  .ok{color: #28a745}
+  .err{color:#dc3545}
+  .warn{color:#e67e22}
+  .info{background:#eef2ff;border-left:4px solid #4a6cf7;padding:10px 14px;border-radius:6px;font-size:.85em;margin-top:12px}
+  .footer{text-align:center;font-size:.78em;color:#aaa;margin-top:20px}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>🧾 AI Invoice Auditor — Validation Report</h1>
+  <small>Invoice: <strong>{invoice_id}</strong> &nbsp;|&nbsp; {generated_at}</small>
+</div>
+
+<div class="card">
+  <h2>Invoice Summary</h2>
+  <table>
+    <tr><th>Vendor ID</th><td>{vendor_id}</td></tr>
+    <tr><th>Currency</th><td>{currency}</td></tr>
+    <tr><th>Language</th><td>{language}</td></tr>
+    <tr><th>Translation Confidence</th><td>{trans_display}</td></tr>
+    <tr><th>Line Items</th><td>{line_item_count}</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Validation Status</h2>
+  <table>
+    <tr><th>Status</th><td class="{status_class}"><strong>{status}</strong></td></tr>
+  </table>
+
+  <h2>Missing Fields</h2>
+  {missing_html}
+
+  <h2>Discrepancies</h2>
+  {disc_html}
+
+  <div class="info">
+    📋 Rules applied — Price: ±{price_tol}% &nbsp;|&nbsp; Tax: ±{tax_tol}%
+  </div>
+</div>
+
+<div class="card">
+  <h2>Recommendation</h2>
+  <span class="badge">{recommendation}</span>
+</div>
+
+<div class="footer">AI Invoice Auditor · Capstone Project · {generated_at}</div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Report - {invoice_id}</title>
+<style>
+  *{{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}}
+  body{{background:#f0f2f5;padding:30px;color:#333}}
+  .card{{background:#fff;border-radius:10px;padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.08)}}
+  h1{{color:#2c3e50;font-size:1.4em;margin-bottom:4px}}
+  h2{{font-size:.95em;color:#555;border-left:4px solid #2c3e50;padding-left:8px;margin:14px 0 8px}}
+  table{{width:100%;border-collapse:collapse;font-size:.9em}}
+  td,th{{padding:8px 12px;border:1px solid #e0e0e0;text-align:left}}
+  th{{background:#2c3e50;color:#fff;width:40%}}
+  tr:nth-child(even){{background:#f9f9f9}}
+  ul{{padding-left:18px;margin:4px 0}}
+  li{{margin:4px 0;font-size:.9em}}
+  .badge{{display:inline-block;padding:7px 22px;border-radius:20px;color:#fff;font-weight:bold;background:{badge_color}}}
+  .ok{{color:#28a745}}
+  .err{{color:#dc3545}}
+  .warn{{color:#e67e22}}
+  .info{{background:#eef2ff;border-left:4px solid #4a6cf7;padding:10px 14px;border-radius:6px;font-size:.85em;margin-top:12px}}
+  .footer{{text-align:center;font-size:.78em;color:#aaa;margin-top:20px}}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>🧾 AI Invoice Auditor — Validation Report</h1>
+  <small>Invoice: <strong>{invoice_id}</strong> &nbsp;|&nbsp; {generated_at}</small>
+</div>
+
+<div class="card">
+  <h2>Invoice Summary</h2>
+  <table>
+    <tr><th>Vendor ID</th><td>{vendor_id}</td></tr>
+    <tr><th>Currency</th><td>{currency}</td></tr>
+    <tr><th>Language</th><td>{language}</td></tr>
+    <tr><th>Translation Confidence</th><td>{trans_display}</td></tr>
+    <tr><th>Line Items</th><td>{line_item_count}</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Validation Status</h2>
+  <table>
+    <tr><th>Status</th><td class="{status_class}"><strong>{status}</strong></td></tr>
+  </table>
+
+  <h2>Missing Fields</h2>
+  {missing_html}
+
+  <h2>Discrepancies</h2>
+  {disc_html}
+
+  <div class="info">
+    📋 Rules applied — Price: ±{price_tol}% &nbsp;|&nbsp; Tax: ±{tax_tol}%
+  </div>
+</div>
+
+<div class="card">
+  <h2>Recommendation</h2>
+  <span class="badge">{recommendation}</span>
+</div>
+
+<div class="footer">AI Invoice Auditor · Capstone Project · {generated_at}</div>
+
+</body>
+</html>

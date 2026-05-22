@@ -1,0 +1,35 @@
+{
+    "report_metadata": {
+        "invoice_id": "INV-1005",
+        "generated_at": "2026-05-18T06:33:57.489421Z"
+    },
+    "invoice_summary": {
+        "vendor_id": "VEND-005",
+        "currency": "USD",
+        "translation_confidence": 0.91
+    },
+    "validation_result": {
+        "status": "APPROVED",
+        "summary": "Invoice passed validation. Recommendation: Approve",
+        "missing_fields": [],
+        "warnings": [],
+        "discrepancy_summary": []
+    },
+    "line_items": [
+        {
+            "item_code": "SKU-401",
+            "description": "Fuel Surcharge",
+            "qty": 1.0,
+            "unit_price": 120.0,
+            "total": 120.0
+        },
+        {
+            "item_code": "SKU-402",
+            "description": "Express Delivery Boxes",
+            "qty": 25.0,
+            "unit_price": 4.5,
+            "total": 112.5
+        }
+    ],
+    "recommendation": "Approve"
+}

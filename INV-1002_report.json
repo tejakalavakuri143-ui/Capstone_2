@@ -1,0 +1,28 @@
+{
+    "report_metadata": {
+        "invoice_id": "INV-1002",
+        "generated_at": "2026-05-18T06:33:20.441656Z"
+    },
+    "invoice_summary": {
+        "vendor_id": "VEND-002",
+        "currency": "USD",
+        "translation_confidence": 1.0
+    },
+    "validation_result": {
+        "status": "APPROVED",
+        "summary": "Invoice passed validation. Recommendation: Approve",
+        "missing_fields": [],
+        "warnings": [],
+        "discrepancy_summary": []
+    },
+    "line_items": [
+        {
+            "item_code": "SKU-101",
+            "description": "Container Seals",
+            "qty": 200.0,
+            "unit_price": 1.25,
+            "total": 250.0
+        }
+    ],
+    "recommendation": "Approve"
+}

@@ -1,0 +1,30 @@
+{
+    "report_metadata": {
+        "invoice_id": "INV_EN_006_malformed",
+        "generated_at": "2026-05-18T06:33:30.253337Z"
+    },
+    "invoice_summary": {
+        "vendor_id": "VEND-006",
+        "currency": "INR",
+        "translation_confidence": 0.91
+    },
+    "validation_result": {
+        "status": "REJECTED",
+        "summary": "Invoice was rejected. Missing fields: Missing required header field: invoice_no Recommendation: Reject",
+        "missing_fields": [
+            "Missing required header field: invoice_no"
+        ],
+        "warnings": [],
+        "discrepancy_summary": []
+    },
+    "line_items": [
+        {
+            "item_code": "SKU-501",
+            "description": "Container Transport",
+            "qty": 5.0,
+            "unit_price": 8000.0,
+            "total": 40000.0
+        }
+    ],
+    "recommendation": "Reject"
+}

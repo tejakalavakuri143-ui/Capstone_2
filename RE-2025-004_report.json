@@ -1,0 +1,35 @@
+{
+    "report_metadata": {
+        "invoice_id": "RE-2025-004",
+        "generated_at": "2026-05-18T06:32:57.185002Z"
+    },
+    "invoice_summary": {
+        "vendor_id": "VEND-004",
+        "currency": "EUR",
+        "translation_confidence": 0.81
+    },
+    "validation_result": {
+        "status": "APPROVED",
+        "summary": "Invoice passed validation. Recommendation: Approve",
+        "missing_fields": [],
+        "warnings": [],
+        "discrepancy_summary": []
+    },
+    "line_items": [
+        {
+            "item_code": "SKU-301",
+            "description": "Transport crates",
+            "qty": 40.0,
+            "unit_price": 25.0,
+            "total": 1000.0
+        },
+        {
+            "item_code": "SKU-302",
+            "description": "Safety vests",
+            "qty": 60.0,
+            "unit_price": 10.0,
+            "total": 600.0
+        }
+    ],
+    "recommendation": "Approve"
+}
